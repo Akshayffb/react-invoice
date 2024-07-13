@@ -2,8 +2,6 @@
 
 React Invoice Generator allows you quickly make invoices and save them as PDF. [ffb Developers](https://tuanpham-dev.github.io/react-invoice-generator/)
 
-![react-invoice-generator](https://raw.githubusercontent.com/tuanpham-dev/react-invoice-generator/master/screenshot.png)
-
 ## Available Scripts
 
 In the project directory, you can run:

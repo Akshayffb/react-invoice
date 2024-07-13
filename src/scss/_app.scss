@@ -1,6 +1,9 @@
 .app {
-  margin: 30px auto 50px auto;
-  width: 700px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 50px;
+  background-color: #fff;
 }
 
 .input,
@@ -39,16 +42,16 @@
   position: relative;
   background: #fff;
   padding: 40px 35px;
-  box-shadow: 0 0 17px 0 rgba(16, 40, 73, 0.09);
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  width: 85%;
 }
 
 .download-pdf {
-  position: fixed;
-  top: 100px;
-  margin-left: -110px;
-  width: 40px;
-  height: 40px;
   transition: opacity 0.2s ease-in-out;
+  position: absolute;
+  right: -180px;
+  top: 0px;
 
   &.loading {
     opacity: 0.3;
@@ -56,30 +59,35 @@
 
   button {
     border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%;
+    height: 100%;
+  }
+
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: #0056b3;
   }
 
   a,
   label,
   button {
     display: block;
-    background-repeat: no-repeat;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    text-decoration: none;
   }
   .download-pdf__pdf {
-    background: url('../images/download.svg');
-  }
-  .download-pdf__template_download {
-    width: 30px;
-    height: 30px;
-    background: url('../images/template_download.svg');
-  }
-  .download-pdf__template_upload {
-    width: 30px;
-    height: 30px;
-    background: url('../images/template_upload.svg');
+    background: url('/public/pdf.svg');
   }
   input[type='file'] {
     visibility: hidden;
@@ -195,4 +203,54 @@
   left: 0;
   border-radius: 4px;
   box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+@media only screen and (max-width: 912px) {
+  .download-pdf{
+    right: 0px;
+  }
+  .invoice-wrapper{
+    width: 100%;
+    padding: 20px;
+  }
+
+  .app{
+    padding: 25px;
+    width: 100%;
+  }
+
+  .flex{
+    justify-content: space-between;
+  gap: 10px;
+  }
+
+  .w-50{
+    width: 40%;
+  }
+  
+  }
+
+@media only screen and (max-width: 768px) {
+.download-pdf{
+  right: 0px;
+}
+.invoice-wrapper{
+  width: 100%;
+  padding: 20px;
+}
+.app{
+  padding: 25px;
+  width: 100%;
+}
+
+.flex{
+  justify-content: space-between;
+gap: 10px;
+}
+
+.w-50{
+  width: 40%;
+}
+
 }
